@@ -4,13 +4,13 @@ pipeline {
         label 'master'
     }
     options{
-    timestamp()
+    timestamps()
     }
     stages {
         stage('step 1') {
             steps {
                 echo 'Building..'
-                docker run hello-world
+                sh 'docker run hello-world'
             }
         }
     }
