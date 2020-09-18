@@ -1,7 +1,7 @@
 properties([disableConcurrentBuilds()])
 pipeline {
     agent {
-        docker { image 'hello-world' }
+        label 'master'
     }
     options{
     timestamp()
@@ -10,6 +10,7 @@ pipeline {
         stage('step 1') {
             steps {
                 echo 'Building..'
+                docker run hello-world
             }
         }
     }
